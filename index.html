@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+      integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+      crossorigin="anonymous"
+    />
+
+    <style>
+      #output {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      #buttonBox {
+        display: flex;
+        justify-content: center;
+      }
+      .card-body {
+        background-color: #e8f0ff;
+      }
+
+      body {
+        background-color: lightgray;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <!-- <input type="text" id="input" /> -->
+      <div class="container-fluid" id="buttonBox">
+        <button id="button">First Page</button>
+        <input type="text" id="input" placeholder="enter a name" />
+        <button id="search">Search</button><button id="next">Next Page</button>
+      </div>
+      <div id="output"></div>
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>
