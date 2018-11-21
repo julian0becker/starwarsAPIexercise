@@ -1,32 +1,22 @@
-// document.getElementById("button").addEventListener("click", function() {
-//     let user = "";
-//     user = document.getElementById("input").val;
-//   let url = `https://swapi.co/api/people`;
+class Person {
+  constructor(first, height, mass, dob, gender) {
+    (this.name = first),
+      (this.height = height),
+      (this.mass = mass),
+      (this.dob = dob),
+      (this.gender = gender);
+  }
+}
 
-//   async function getUser() {
-//     let res = await fetch(url);
-//     let data = await res.json();
-//     renderOutput(data);
-//   }
-// });
-
-// if (user != "") {
-//   getUser();
-// } else {
-//   alert("input username");
-// }
-
-// function renderOutput(data) {
-//   data.results.forEach(element => {
-//     let list = document.getElementById("output");
-//     let listItem = document.createElement("li");
-//     list.appendChild(listItem);
-//     listItem.innerText = element.name;
-//   });
-// }
 let i = 2;
 let buttonNext = document.getElementById("next");
 buttonNext.addEventListener("click", nextPage);
+
+let button = document.getElementById("button");
+button.addEventListener("click", listNames);
+
+let searchButton = document.getElementById("search");
+searchButton.addEventListener("click", search);
 
 function nextPage() {
   fetch(`https://swapi.co/api/people/?page=${i}`)
@@ -37,14 +27,6 @@ function nextPage() {
       let characterArray = [];
 
       data["results"].forEach(element => {
-        function Person(first, height, mass, dob, gender) {
-          (this.name = first),
-            (this.height = height),
-            (this.mass = mass),
-            (this.dob = dob),
-            (this.gender = gender);
-        }
-
         let user = new Person(
           element.name,
           element.height,
@@ -62,9 +44,6 @@ function nextPage() {
   i++;
 }
 
-let button = document.getElementById("button");
-button.addEventListener("click", listNames);
-
 function listNames() {
   fetch("https://swapi.co/api/people/")
     .then(function(response) {
@@ -74,14 +53,6 @@ function listNames() {
       let characterArray = [];
 
       data["results"].forEach(element => {
-        function Person(first, height, mass, dob, gender) {
-          (this.name = first),
-            (this.height = height),
-            (this.mass = mass),
-            (this.dob = dob),
-            (this.gender = gender);
-        }
-
         let user = new Person(
           element.name,
           element.height,
@@ -99,9 +70,6 @@ function listNames() {
   i = 2;
 }
 
-let searchButton = document.getElementById("search");
-searchButton.addEventListener("click", search);
-
 function search() {
   let searchTerm = document.getElementById("input").value;
 
@@ -113,14 +81,6 @@ function search() {
       let characterArray = [];
 
       data["results"].forEach(element => {
-        function Person(first, height, mass, dob, gender) {
-          (this.name = first),
-            (this.height = height),
-            (this.mass = mass),
-            (this.dob = dob),
-            (this.gender = gender);
-        }
-
         let user = new Person(
           element.name,
           element.height,
